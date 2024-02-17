@@ -78,6 +78,7 @@ def get_coffee_cost(drink_type):
 
 
 def calculate_money(quarters, dimes, nickels, pennies):
+    """Returns total from input"""
     return (quarters * 0.25) + (dimes * 0.1) + (nickels * 0.05) + (pennies * 0.01)
 
 # Main code

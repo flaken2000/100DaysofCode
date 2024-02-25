@@ -12,11 +12,11 @@ class Paddle(Turtle):
         self.shape("square")
         self.color("white")
         self.speed("fastest")
-        self.shapesize(5, 1)
+        self.shapesize(10, 1)
         self.goto(self.x_pos, 0)
 
     def up(self):
-        self.goto(self.xcor(), self.ycor() + 20)
+        self.goto(self.xcor(), self.ycor() + 30)
 
     def down(self):
-        self.goto(self.xcor(), self.ycor() - 20)
+        self.goto(self.xcor(), self.ycor() - 30)

@@ -23,7 +23,7 @@ screen.onkey(left_paddle.up, "w")
 screen.onkey(left_paddle.down, "s")
 
 game_is_on = True
-game_speed_start = 0.1
+game_speed_start = 0.08
 game_speed = game_speed_start
 while game_is_on:
     time.sleep(game_speed)
@@ -35,7 +35,7 @@ while game_is_on:
         ball.bounce_wall()
 
     # Detect collision with paddles
-    if ball.distance(right_paddle) < 60 and ball.xcor() > 320 or ball.distance(left_paddle) < 60 and ball.xcor() < - 320:
+    if ball.distance(right_paddle) < 80 and ball.xcor() > 320 or ball.distance(left_paddle) < 80 and ball.xcor() < - 320:
         ball.paddle_bounce()
         game_speed *= 0.8
 

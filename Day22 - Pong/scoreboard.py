@@ -10,7 +10,7 @@ class Scoreboard(Turtle):
         self.penup()
         self.hideturtle()
         self.speed("fastest")
-        self.color("white")
+        self.color("yellow")
         self.l_score = 0
         self.r_score = 0
         self.update_scoreboard()

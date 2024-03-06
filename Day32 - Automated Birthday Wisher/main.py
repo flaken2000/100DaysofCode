@@ -8,8 +8,8 @@ today_month = now.month
 today_day = now.day
 today = (today_month, today_day)
 
-my_email = "ouellet.patrick@gmail.com"
-password = "dfkf zexo cmvl dhvk"
+my_email = "@gmail.com"
+password = ""
 email_subject = "Happy Birthday"
 
 

@@ -1,13 +1,14 @@
 import requests
 from datetime import date, timedelta
+import os
 
 pixela_endpoint = "https://pixe.la/v1/users"
-pixela_username = ""
-pixela_token = ""
+PIXELA_USERNAME = os.environ.get("PIXELA_USERNAME", "Env variable PIXELA_USERNAME doesn't exists")
+PIXELA_TOKEN = os.environ.get("PIXELA_TOKEN", "Env variable PIXELA_TOKEN doesn't exists")
 
 # Post a Pixel
 graph_id = "graph01"
-pixel_endpoint = f"{pixela_endpoint}/{pixela_username}/graphs/{graph_id}"
+pixel_endpoint = f"{pixela_endpoint}/{PIXELA_USERNAME}/graphs/{graph_id}"
 date_to_post = date.today()  # - timedelta(days=1)
 date_to_post = date_to_post.strftime("%Y%m%d")
 
@@ -17,7 +18,7 @@ pixel_params = {
 }
 
 headers = {
-    "X-USER-TOKEN": pixela_token
+    "X-USER-TOKEN": PIXELA_TOKEN
 }
 
 response = requests.post(url=pixel_endpoint, json=pixel_params, headers=headers)

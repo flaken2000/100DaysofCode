@@ -26,7 +26,7 @@ response_nutritionix.raise_for_status()
 date_to_post = dt.datetime.now()
 
 sheety_headers = {
-    "Authorization": "Bearer yU87C26aiGq3gtuhVZoh"
+    "Authorization": "Bearer yourtokenhere"
 
 }
 

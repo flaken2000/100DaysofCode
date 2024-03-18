@@ -11,19 +11,10 @@ webpage = response.text
 soup = BeautifulSoup(webpage, "html.parser")
 movies = soup.find_all(name="h3", class_="title")
 
-movie_title_list = []
-for movie in movies:
-    movie_title = movie.getText().split()
-    movie_title_new = ""
-    for x in range(1, len(movie_title)):
-        movie_title_new += movie_title[x] + " "
-    movie_title_list.append(movie_title_new)
+movie_titles = [movie.getText() for movie in movies]
+movies = movie_titles[::-1]
 
-movies_numbers = [int(movie.getText().split()[0][:-1]) for movie in movies]
-
-for x in range(len(movies_numbers) - 1, 0, -1):
-    movie_write = f"{movies_numbers[x]}) {movie_title_list[x]}"
-    with open("movies.txt", "a", encoding="utf8") as file:
-        file.write(movie_write)
+with open("movies.txt", "w", encoding="utf8") as file:
+    for movie in movies:
+        file.write(movie)
         file.write("\n")
-
